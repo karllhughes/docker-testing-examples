@@ -22,6 +22,8 @@ function sortArrayOfObjects(string $field, array $objects): array
  * PHPUnit test code
  *
  * Normally this would be in another file, but we're keeping it simple.
+ * This test simply verifies that the sorting works, but will throw
+ * a syntax error in PHP < 7.0.
  */
 use PHPUnit\Framework\TestCase;
 
