@@ -37,6 +37,13 @@ Use the short instructions below, or check out the blog post (coming soon) for m
 
 ## Ex 4: Seeding data with volumes
 
+- Navigate to `/ex-4` directory
+- Install dependencies (using Docker and Composer): `docker run --rm -v $(pwd):/app -w /app composer install`
+- Build the PHP/mysqli image from Dockerfile (same as in Ex 2): `docker build . -t php-72-mysqli`
+- Run a MySQL container with a bind mount: `docker run --name database --rm -d -e MYSQL_ALLOW_EMPTY_PASSWORD=true -v $(pwd)/data:/var/lib/mysql mysql:5.7`. Wait a few seconds for the container to boot.
+- Run PHPUnit using custom image: `docker run --rm -v $(pwd):/app -w /app --link database php-72-mysqli vendor/bin/phpunit index.php` (should pass)
+- Stop/remove the MySQL container when you're done: `docker rm -f database`
+
 ## Ex 5: NGinx network spins up and works
 
 ## Ex 6: Integration test for networked services
