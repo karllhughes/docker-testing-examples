@@ -21,8 +21,19 @@ Use the short instructions below, or check out the blog post (coming soon) for m
 - Run PHPUnit in PHP 7.2: `docker run --rm -v $(pwd):/app -w /app --link database php:7.2 vendor/bin/phpunit index.php` (should fail)
 - Build a custom image from Dockerfile (with mysqli extension): `docker build . -t php-72-mysqli`
 - Run PHPUnit using custom image: `docker run --rm -v $(pwd):/app -w /app --link database php-72-mysqli vendor/bin/phpunit index.php` (should pass)
+- Stop/remove the MySQL container when you're done: `docker rm -f database`
 
-## Ex 3: Integration test with older version of MySQL
+## Ex 3: Integration test with different versions of MySQL
+
+- Navigate to `/ex-3` directory
+- Install dependencies (using Docker and Composer): `docker run --rm -v $(pwd):/app -w /app composer install`
+- Build the PHP/mysqli image from Dockerfile (same as in Ex 2): `docker build . -t php-72-mysqli`
+- Run a MySQL 5.6 container to test with: `docker run --name database --rm -d -e MYSQL_ALLOW_EMPTY_PASSWORD=true -e MYSQL_DATABASE=test mysql:5.6`. Wait a few seconds for the container to boot.
+- Run PHPUnit using custom image: `docker run --rm -v $(pwd):/app -w /app --link database php-72-mysqli vendor/bin/phpunit index.php` (should fail)
+- Stop/remove the MySQL container: `docker rm -f database`
+- Run a MySQL 5.7 container to test with: `docker run --name database --rm -d -e MYSQL_ALLOW_EMPTY_PASSWORD=true -e MYSQL_DATABASE=test mysql:5.7`. Wait a few seconds for the container to boot.
+- Run PHPUnit using custom image: `docker run --rm -v $(pwd):/app -w /app --link database php-72-mysqli vendor/bin/phpunit index.php` (should pass)
+- Stop/remove the MySQL container when you're done: `docker rm -f database`
 
 ## Ex 4: Seeding data with volumes
 
