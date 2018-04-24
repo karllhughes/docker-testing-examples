@@ -1,5 +1,9 @@
 version: '3.5'
 services:
+  api:
+    build: .
+    volumes:
+      - ./api:/app
   nginx:
     image: nginx:alpine
     volumes:
@@ -16,7 +20,8 @@ services:
     depends_on:
       - chromedriver
       - nginx
+      - api
     environment:
-      - WAIT_FOR_HOSTS=nginx:80 chromedriver:4444 chromedriver:6060
+      - WAIT_FOR_HOSTS=nginx:80 chromedriver:4444 chromedriver:6060 api:3000
     volumes:
       - ./:/home/node

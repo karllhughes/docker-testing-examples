@@ -46,11 +46,19 @@ Use the short instructions below, or check out the blog post (coming soon) for m
 
 ## Ex 5: NodeJS End-to-end tests
 
-- 
+- Navigate to `/ex-5` directory
+- Run the tests with [Docker Compose](https://docs.docker.com/compose/): `docker-compose run --rm nightwatch`.
+- Stop the containers: `docker-compose down`.
 
-This example adapted from [blueimp's open source example](https://github.com/blueimp/nightwatch) of running Nightwatch in Docker.
+This example adapted from [blueimp's open source nightwatch repo](https://github.com/blueimp/nightwatch).
 
-## Ex 6: Integration test for networked services
+## Ex 6: End-to-end test for networked application
+
+- Navigate to `/ex-6` directory
+- Run the tests with [Docker Compose](https://docs.docker.com/compose/): `docker-compose run --rm nightwatch`.
+- Stop the containers: `docker-compose down`.
+
+This example adapted from [b00giZm's open source Node/Express example](https://github.com/b00giZm/docker-compose-nodejs-examples/tree/master/00-basic-express-generator).
 
 ## Ex 7: Automating with Codeship
 
