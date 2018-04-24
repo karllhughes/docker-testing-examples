@@ -20,4 +20,4 @@ services:
     environment:
       - WAIT_FOR_HOSTS=nginx:80 chromedriver:4444 chromedriver:6060
     volumes:
-      - ./test:/home/node
+      - ./:/home/node

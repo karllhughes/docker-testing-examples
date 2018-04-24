@@ -44,7 +44,7 @@ Use the short instructions below, or check out the blog post (coming soon) for m
 - Run PHPUnit using custom image: `docker run --rm -v $(pwd):/app -w /app --link database php-72-mysqli vendor/bin/phpunit index.php` (should pass)
 - Stop/remove the MySQL container when you're done: `docker rm -f database`
 
-## Ex 5: NodeJS End-to-end tests with NGinx
+## Ex 5: NodeJS End-to-end tests
 
 - 
 
