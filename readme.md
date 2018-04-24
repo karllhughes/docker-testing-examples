@@ -44,8 +44,29 @@ Use the short instructions below, or check out the blog post (coming soon) for m
 - Run PHPUnit using custom image: `docker run --rm -v $(pwd):/app -w /app --link database php-72-mysqli vendor/bin/phpunit index.php` (should pass)
 - Stop/remove the MySQL container when you're done: `docker rm -f database`
 
-## Ex 5: NGinx network spins up and works
+## Ex 5: NodeJS End-to-end tests with NGinx
+
+- 
+
+This example adapted from [blueimp's open source example](https://github.com/blueimp/nightwatch) of running Nightwatch in Docker.
 
 ## Ex 6: Integration test for networked services
 
 ## Ex 7: Automating with Codeship
+
+
+# Legal
+
+Copyright 2018, Karl Hughes
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

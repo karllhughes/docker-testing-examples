@@ -1,0 +1,10 @@
+{
+  "output_folder": false,
+  "src_folders": ["specs"],
+  "test_settings": {
+    "default": {
+      "launch_url": "http://nginx",
+      "selenium_host": "chromedriver"
+    }
+  }
+}
